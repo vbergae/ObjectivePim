@@ -72,7 +72,7 @@ static BOOL IsBlock(id object)
 
 - (instancetype)initWithParams:(NSDictionary *)params
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         for (NSString *key in params) {
             self[key] = params[key];

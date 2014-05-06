@@ -33,7 +33,7 @@
 {
     [super setUp];
 
-    self.pim = ObjectivePim.new;
+    self.pim = OPContainer.new;
 }
 
 - (void)tearDown
@@ -105,7 +105,7 @@
     NSDictionary *params = @{@"param": @"value"};
     OPContainer *pim = [[OPContainer alloc] initWithParams:params];
     
-    XCTAssertEqualObjects(pim[@"param"], pim[@"param"]);
+    XCTAssertEqualObjects(pim[@"param"], @"value");
 }
 
 - (void)testValidatesKey
