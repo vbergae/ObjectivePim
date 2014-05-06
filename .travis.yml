@@ -1,0 +1,5 @@
+language: objective-c
+
+script:
+  - xctool ONLY_ACTIVE_ARCH=NO
+  - xctool test ONLY_ACTIVE_ARCH=NO

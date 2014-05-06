@@ -1,0 +1,5 @@
+[
+  "-project", "ObjectivePim.xcodeproj",
+  "-scheme", "ObjectivePim",
+  "-sdk", "iphonesimulator",
+]
