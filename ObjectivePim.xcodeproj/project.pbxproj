@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CC0FD13419003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
-		CC0FD13919003F64004CD983 /* ObjectivePim.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC0FD13819003F64004CD983 /* ObjectivePim.h */; };
-		CC0FD13B19003F64004CD983 /* ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD13A19003F64004CD983 /* ObjectivePim.m */; };
+		CC0FD13919003F64004CD983 /* OPContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC0FD13819003F64004CD983 /* OPContainer.h */; };
+		CC0FD13B19003F64004CD983 /* OPContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD13A19003F64004CD983 /* OPContainer.m */; };
 		CC0FD14219003F64004CD983 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14119003F64004CD983 /* XCTest.framework */; };
 		CC0FD14319003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
 		CC0FD14519003F64004CD983 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14419003F64004CD983 /* UIKit.framework */; };
 		CC0FD14819003F64004CD983 /* libObjectivePim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13019003F63004CD983 /* libObjectivePim.a */; };
 		CC0FD14E19003F64004CD983 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC0FD14C19003F64004CD983 /* InfoPlist.strings */; };
 		CC0FD15019003F64004CD983 /* ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */; };
+		CC85D727191979D6005438E1 /* UIApplication+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CC0FD13919003F64004CD983 /* ObjectivePim.h in CopyFiles */,
+				CC0FD13919003F64004CD983 /* OPContainer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,14 +46,16 @@
 		CC0FD13019003F63004CD983 /* libObjectivePim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectivePim.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13319003F63004CD983 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CC0FD13719003F64004CD983 /* ObjectivePim-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectivePim-Prefix.pch"; sourceTree = "<group>"; };
-		CC0FD13819003F64004CD983 /* ObjectivePim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectivePim.h; sourceTree = "<group>"; };
-		CC0FD13A19003F64004CD983 /* ObjectivePim.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectivePim.m; sourceTree = "<group>"; };
+		CC0FD13819003F64004CD983 /* OPContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OPContainer.h; sourceTree = "<group>"; };
+		CC0FD13A19003F64004CD983 /* OPContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OPContainer.m; sourceTree = "<group>"; };
 		CC0FD14019003F64004CD983 /* ObjectivePimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectivePimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD14119003F64004CD983 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CC0FD14419003F64004CD983 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CC0FD14B19003F64004CD983 /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectivePimTests-Info.plist"; sourceTree = "<group>"; };
 		CC0FD14D19003F64004CD983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectivePimTests.m; sourceTree = "<group>"; };
+		CC85D725191979D6005438E1 /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ObjectivePim.h"; sourceTree = "<group>"; };
+		CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ObjectivePim.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +113,11 @@
 		CC0FD13519003F64004CD983 /* ObjectivePim */ = {
 			isa = PBXGroup;
 			children = (
-				CC0FD13819003F64004CD983 /* ObjectivePim.h */,
-				CC0FD13A19003F64004CD983 /* ObjectivePim.m */,
+				CC0FD13819003F64004CD983 /* OPContainer.h */,
+				CC0FD13A19003F64004CD983 /* OPContainer.m */,
 				CC0FD13619003F64004CD983 /* Supporting Files */,
+				CC85D725191979D6005438E1 /* UIApplication+ObjectivePim.h */,
+				CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */,
 			);
 			path = ObjectivePim;
 			sourceTree = "<group>";
@@ -224,7 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FD13B19003F64004CD983 /* ObjectivePim.m in Sources */,
+				CC0FD13B19003F64004CD983 /* OPContainer.m in Sources */,
+				CC85D727191979D6005438E1 /* UIApplication+ObjectivePim.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +415,7 @@
 				CC0FD15519003F64004CD983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC0FD15619003F64004CD983 /* Build configuration list for PBXNativeTarget "ObjectivePimTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +424,7 @@
 				CC0FD15819003F64004CD983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
