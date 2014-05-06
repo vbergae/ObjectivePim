@@ -117,7 +117,7 @@
 {
     XCTAssertThrows(
         [self.pim extend:@"foo"
-                withCode:^(id service, ObjectivePim *container) {}]
+                withCode:^(id service, OPContainer *container) {}]
     );
 }
 
