@@ -1,5 +1,5 @@
 language: objective-c
 
 script:
-  - xctool ONLY_ACTIVE_ARCH=NO
-  - xctool test ONLY_ACTIVE_ARCH=NO
+  - xctool -project ObjectivePim.xcodeproj -scheme ObjectivePim -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test  -project ObjectivePim.xcodeproj -scheme ObjectivePim -sdk iphonesimulato ONLY_ACTIVE_ARCH=NO
