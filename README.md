@@ -126,6 +126,7 @@ By default, each time you get a service, ObjectivePim returns the **same instanc
 of it. If you want a different instance to be returned for all calls, wrap your
 block with the ``factory:`` method
 
-    $container['session'] = $container->factory(function ($c) {
-        return new Session($c['session_storage']);
-    });
+    container[@"service"] = [container factory:^(OPContainer *container) {
+        return [[Foo alloc] initWithValue:container[@"key_to_value"]];
+    }];
+
