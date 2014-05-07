@@ -1,6 +1,8 @@
 # ObjectivePim
 
-ObjectivePim is a small Dependency Injection Container for Objective-C based on the code of [Pimple](https://github.com/fabpot/Pimple) project (including this file :P).
+[![Build Status](https://travis-ci.org/vbergae/ObjectivePim.svg?branch=master)](https://travis-ci.org/vbergae/ObjectivePim)
+
+ObjectivePim is a small Dependency Injection Container for Objective-C based on [Pimple](https://github.com/fabpot/Pimple)'s source code (including this file :P).
 
 ## Installation
 
