@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef KS_INSTANCETYPE
+#ifndef OP_INSTANCETYPE
 #if __has_feature(objc_instancetype)
     #define OP_INSTANCETYPE instancetype
 #else
