@@ -34,7 +34,7 @@ different kind of data: *services* and *parameters*.
 Defining a parameter is as simple as using the ObjectivePim instance as a dictionary:
 
     // define some parameters
-    container[@"foo"] = @"bar"";
+    container[@"foo"] = @"bar";
     container[@"default_items"] = @5;
 
 ### Defining Services
