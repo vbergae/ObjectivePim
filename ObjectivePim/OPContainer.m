@@ -65,12 +65,12 @@ static BOOL IsBlock(id object)
 #pragma mark -
 #pragma mark NSDictionary overrideds
 
-- (instancetype)init
+- (OP_INSTANCETYPE)init
 {
     return [self initWithObjects:NULL forKeys:NULL count:0];
 }
 
-- (instancetype)initWithParams:(NSDictionary *)params
+- (OP_INSTANCETYPE)initWithParams:(NSDictionary *)params
 {
     self = [self init];
     if (self) {
@@ -82,7 +82,7 @@ static BOOL IsBlock(id object)
     return self;
 }
 
-- (instancetype)initWithObjects:(const id [])objects
+- (OP_INSTANCETYPE)initWithObjects:(const id [])objects
                         forKeys:(const id<NSCopying> [])keys
                           count:(NSUInteger)cnt
 {
@@ -177,12 +177,12 @@ static BOOL IsBlock(id object)
     return value;
 }
 
-- (instancetype)registerProvider:(id<OPServiceProviderProtocol>)provider
+- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
 {
     return [self registerProvider:provider params:nil];
 }
 
-- (instancetype)registerProvider:(id<OPServiceProviderProtocol>)provider
+- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
                           params:(NSDictionary *)params
 {
     NSParameterAssert(provider);

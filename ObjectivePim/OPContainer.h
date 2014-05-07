@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef OP_INSTANCETYPE
+#if __has_feature(objc_instancetype)
+    #define OP_INSTANCETYPE instancetype
+#else
+    #define OP_INSTANCETYPE id
+#endif
+#endif
+
 @class OPContainer;
 
 /**
@@ -58,7 +66,7 @@
  *
  * @param params The parameters or objects dictionary.
  */
-- (instancetype)initWithParams:(NSDictionary *)params;
+- (OP_INSTANCETYPE)initWithParams:(NSDictionary *)params;
 
 /**
  @name Service Container
@@ -109,7 +117,7 @@
  *
  * @return self
  */
-- (instancetype)registerProvider:(id<OPServiceProviderProtocol>)provider;
+- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider;
 
 /**
  * Registers a service provider.
@@ -119,7 +127,7 @@
  *
  * @return self
  */
-- (instancetype)registerProvider:(id<OPServiceProviderProtocol>)provider
+- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
                           params:(NSDictionary *)params;
 
 @end
