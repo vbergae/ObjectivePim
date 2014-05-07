@@ -7,9 +7,9 @@ ObjectivePim is a small Dependency Injection Container for Objective-C based on 
 ## Installation
 
 
-The supported way to get OCJiraFeedback is using [CocoaPods](http://cocoapods.org/).
+The supported way to get ObjectivePim is using [CocoaPods](http://cocoapods.org/).
 
-Add OCJiraFeedback to your Podfile:
+Add ObjectivePim to your Podfile:
 
 
 	platform :ios, '7.0'
@@ -63,7 +63,7 @@ does not matter, and there is no performance penalty.
 
 Using the defined services is also very easy
 
-    // get the session object
+    // get the service object
     id service = container[@"service"];
 
 ### Protecting Parameters
