@@ -54,6 +54,7 @@
 		CC0FD14B19003F64004CD983 /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectivePimTests-Info.plist"; sourceTree = "<group>"; };
 		CC0FD14D19003F64004CD983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectivePimTests.m; sourceTree = "<group>"; };
+		CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjectivePim.podspec; sourceTree = SOURCE_ROOT; };
 		CC85D725191979D6005438E1 /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ObjectivePim.h"; sourceTree = "<group>"; };
 		CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ObjectivePim.m"; sourceTree = "<group>"; };
 		CC85D72819197CBA005438E1 /* ObjectivePim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectivePim.h; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 				CC0FD13719003F64004CD983 /* ObjectivePim-Prefix.pch */,
 				CC85D72919197DA5005438E1 /* README.md */,
 				CC85D72A1919861A005438E1 /* LICENSE */,
+				CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
