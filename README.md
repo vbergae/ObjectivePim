@@ -12,7 +12,7 @@ The supported way to get ObjectivePim is using [CocoaPods](http://cocoapods.org/
 Add ObjectivePim to your Podfile:
 
 
-	platform :ios, '7.0'
+	platform :ios, '6.1'
 
 	pod 'ObjectivePim'
 
