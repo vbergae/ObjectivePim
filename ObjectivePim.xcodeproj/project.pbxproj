@@ -12,10 +12,10 @@
 		CC0FD14319003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
 		CC0FD14519003F64004CD983 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14419003F64004CD983 /* UIKit.framework */; };
 		CC0FD14819003F64004CD983 /* libObjectivePim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13019003F63004CD983 /* libObjectivePim.a */; };
-		CC0FD14E19003F64004CD983 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC0FD14C19003F64004CD983 /* InfoPlist.strings */; };
-		CC0FD15019003F64004CD983 /* ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */; };
 		CC56E37E191C0796003B2FFD /* OPContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E37B191C0796003B2FFD /* OPContainer.m */; };
 		CC56E37F191C0796003B2FFD /* UIApplication+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */; };
+		CC56E385191C0A6D003B2FFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC56E381191C0A6D003B2FFD /* InfoPlist.strings */; };
+		CC56E387191C0A6D003B2FFD /* ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,6 @@
 		CC0FD14019003F64004CD983 /* ObjectivePimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectivePimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD14119003F64004CD983 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CC0FD14419003F64004CD983 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		CC0FD14B19003F64004CD983 /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectivePimTests-Info.plist"; sourceTree = "<group>"; };
-		CC0FD14D19003F64004CD983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectivePimTests.m; sourceTree = "<group>"; };
 		CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjectivePim.podspec; sourceTree = SOURCE_ROOT; };
 		CC56E378191C0796003B2FFD /* ObjectivePim-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjectivePim-Prefix.pch"; path = "Classes/ObjectivePim-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		CC56E379191C0796003B2FFD /* ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectivePim.h; path = Classes/ObjectivePim.h; sourceTree = SOURCE_ROOT; };
@@ -56,6 +53,10 @@
 		CC56E37B191C0796003B2FFD /* OPContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OPContainer.m; path = Classes/OPContainer.m; sourceTree = SOURCE_ROOT; };
 		CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ObjectivePim.h"; path = "Classes/UIApplication+ObjectivePim.h"; sourceTree = SOURCE_ROOT; };
 		CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ObjectivePim.m"; path = "Classes/UIApplication+ObjectivePim.m"; sourceTree = SOURCE_ROOT; };
+		CC56E380191C09E6003B2FFD /* CHANGELOG */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
+		CC56E382191C0A6D003B2FFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Tests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		CC56E383191C0A6D003B2FFD /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ObjectivePimTests-Info.plist"; path = "Tests/ObjectivePimTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectivePimTests.m; path = Tests/ObjectivePimTests.m; sourceTree = SOURCE_ROOT; };
 		CC85D72919197DA5005438E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		CC85D72A1919861A005438E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -133,6 +134,7 @@
 				CC85D72919197DA5005438E1 /* README.md */,
 				CC85D72A1919861A005438E1 /* LICENSE */,
 				CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */,
+				CC56E380191C09E6003B2FFD /* CHANGELOG */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,7 +142,7 @@
 		CC0FD14919003F64004CD983 /* ObjectivePimTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */,
+				CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */,
 				CC0FD14A19003F64004CD983 /* Supporting Files */,
 			);
 			path = ObjectivePimTests;
@@ -149,8 +151,8 @@
 		CC0FD14A19003F64004CD983 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CC0FD14B19003F64004CD983 /* ObjectivePimTests-Info.plist */,
-				CC0FD14C19003F64004CD983 /* InfoPlist.strings */,
+				CC56E381191C0A6D003B2FFD /* InfoPlist.strings */,
+				CC56E383191C0A6D003B2FFD /* ObjectivePimTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FD14E19003F64004CD983 /* InfoPlist.strings in Resources */,
+				CC56E385191C0A6D003B2FFD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FD15019003F64004CD983 /* ObjectivePimTests.m in Sources */,
+				CC56E387191C0A6D003B2FFD /* ObjectivePimTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +262,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC0FD14C19003F64004CD983 /* InfoPlist.strings */ = {
+		CC56E381191C0A6D003B2FFD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CC0FD14D19003F64004CD983 /* en */,
+				CC56E382191C0A6D003B2FFD /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -380,7 +382,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ObjectivePimTests/ObjectivePimTests-Info.plist";
+				INFOPLIST_FILE = "Tests/ObjectivePimTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -397,7 +399,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/ObjectivePim-Prefix.pch";
-				INFOPLIST_FILE = "ObjectivePimTests/ObjectivePimTests-Info.plist";
+				INFOPLIST_FILE = "Tests/ObjectivePimTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
