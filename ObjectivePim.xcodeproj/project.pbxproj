@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CC0FD13419003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
-		CC0FD13919003F64004CD983 /* OPContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC0FD13819003F64004CD983 /* OPContainer.h */; };
-		CC0FD13B19003F64004CD983 /* OPContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD13A19003F64004CD983 /* OPContainer.m */; };
 		CC0FD14219003F64004CD983 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14119003F64004CD983 /* XCTest.framework */; };
 		CC0FD14319003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
 		CC0FD14519003F64004CD983 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14419003F64004CD983 /* UIKit.framework */; };
 		CC0FD14819003F64004CD983 /* libObjectivePim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13019003F63004CD983 /* libObjectivePim.a */; };
 		CC0FD14E19003F64004CD983 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC0FD14C19003F64004CD983 /* InfoPlist.strings */; };
 		CC0FD15019003F64004CD983 /* ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */; };
-		CC85D727191979D6005438E1 /* UIApplication+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */; };
+		CC56E37E191C0796003B2FFD /* OPContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E37B191C0796003B2FFD /* OPContainer.m */; };
+		CC56E37F191C0796003B2FFD /* UIApplication+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CC0FD13919003F64004CD983 /* OPContainer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,9 +43,6 @@
 /* Begin PBXFileReference section */
 		CC0FD13019003F63004CD983 /* libObjectivePim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectivePim.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13319003F63004CD983 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CC0FD13719003F64004CD983 /* ObjectivePim-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectivePim-Prefix.pch"; sourceTree = "<group>"; };
-		CC0FD13819003F64004CD983 /* OPContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OPContainer.h; sourceTree = "<group>"; };
-		CC0FD13A19003F64004CD983 /* OPContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OPContainer.m; sourceTree = "<group>"; };
 		CC0FD14019003F64004CD983 /* ObjectivePimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectivePimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD14119003F64004CD983 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CC0FD14419003F64004CD983 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -55,9 +50,12 @@
 		CC0FD14D19003F64004CD983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CC0FD14F19003F64004CD983 /* ObjectivePimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectivePimTests.m; sourceTree = "<group>"; };
 		CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ObjectivePim.podspec; sourceTree = SOURCE_ROOT; };
-		CC85D725191979D6005438E1 /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ObjectivePim.h"; sourceTree = "<group>"; };
-		CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ObjectivePim.m"; sourceTree = "<group>"; };
-		CC85D72819197CBA005438E1 /* ObjectivePim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectivePim.h; sourceTree = "<group>"; };
+		CC56E378191C0796003B2FFD /* ObjectivePim-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjectivePim-Prefix.pch"; path = "Classes/ObjectivePim-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		CC56E379191C0796003B2FFD /* ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectivePim.h; path = Classes/ObjectivePim.h; sourceTree = SOURCE_ROOT; };
+		CC56E37A191C0796003B2FFD /* OPContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OPContainer.h; path = Classes/OPContainer.h; sourceTree = SOURCE_ROOT; };
+		CC56E37B191C0796003B2FFD /* OPContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OPContainer.m; path = Classes/OPContainer.m; sourceTree = SOURCE_ROOT; };
+		CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ObjectivePim.h"; path = "Classes/UIApplication+ObjectivePim.h"; sourceTree = SOURCE_ROOT; };
+		CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ObjectivePim.m"; path = "Classes/UIApplication+ObjectivePim.m"; sourceTree = SOURCE_ROOT; };
 		CC85D72919197DA5005438E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		CC85D72A1919861A005438E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -88,7 +86,7 @@
 		CC0FD12719003F63004CD983 = {
 			isa = PBXGroup;
 			children = (
-				CC0FD13519003F64004CD983 /* ObjectivePim */,
+				CC0FD13519003F64004CD983 /* Classes */,
 				CC0FD14919003F64004CD983 /* ObjectivePimTests */,
 				CC0FD13219003F63004CD983 /* Frameworks */,
 				CC0FD13119003F63004CD983 /* Products */,
@@ -114,23 +112,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CC0FD13519003F64004CD983 /* ObjectivePim */ = {
+		CC0FD13519003F64004CD983 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CC85D72819197CBA005438E1 /* ObjectivePim.h */,
-				CC0FD13819003F64004CD983 /* OPContainer.h */,
-				CC0FD13A19003F64004CD983 /* OPContainer.m */,
-				CC85D725191979D6005438E1 /* UIApplication+ObjectivePim.h */,
-				CC85D726191979D6005438E1 /* UIApplication+ObjectivePim.m */,
+				CC56E379191C0796003B2FFD /* ObjectivePim.h */,
+				CC56E37A191C0796003B2FFD /* OPContainer.h */,
+				CC56E37B191C0796003B2FFD /* OPContainer.m */,
+				CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */,
+				CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */,
 				CC0FD13619003F64004CD983 /* Supporting Files */,
 			);
+			name = Classes;
 			path = ObjectivePim;
 			sourceTree = "<group>";
 		};
 		CC0FD13619003F64004CD983 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CC0FD13719003F64004CD983 /* ObjectivePim-Prefix.pch */,
+				CC56E378191C0796003B2FFD /* ObjectivePim-Prefix.pch */,
 				CC85D72919197DA5005438E1 /* README.md */,
 				CC85D72A1919861A005438E1 /* LICENSE */,
 				CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */,
@@ -237,8 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FD13B19003F64004CD983 /* OPContainer.m in Sources */,
-				CC85D727191979D6005438E1 /* UIApplication+ObjectivePim.m in Sources */,
+				CC56E37F191C0796003B2FFD /* UIApplication+ObjectivePim.m in Sources */,
+				CC56E37E191C0796003B2FFD /* OPContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +346,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/ObjectivePim.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObjectivePim/ObjectivePim-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/ObjectivePim-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -359,7 +358,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/ObjectivePim.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObjectivePim/ObjectivePim-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/ObjectivePim-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -376,7 +375,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObjectivePim/ObjectivePim-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/ObjectivePim-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -397,7 +396,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObjectivePim/ObjectivePim-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/ObjectivePim-Prefix.pch";
 				INFOPLIST_FILE = "ObjectivePimTests/ObjectivePimTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
