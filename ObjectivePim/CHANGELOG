@@ -1,7 +1,7 @@
 
 0.1.1
+    * Sets iOS deployment target to 6.1
     * Follows CocoaPod's folder structure
-    
 
 0.1.0
     * Initial release
