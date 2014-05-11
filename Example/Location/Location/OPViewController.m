@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIApplication *application = UIApplication.sharedApplication;
+    NSString *value = application.container[@"value"];
+    
+    NSLog(@"Value: %@", value);
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,11 +7,14 @@
 //
 
 #import "OPAppDelegate.h"
+#import "OPLocationProvider.h"
 
 @implementation OPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application.container registerProvider:OPLocationProvider.new];
+    
     // Override point for customization after application launch.
     return YES;
 }

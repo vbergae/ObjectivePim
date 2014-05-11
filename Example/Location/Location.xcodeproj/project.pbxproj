@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12AD3070A21C4CFF99BD6277 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B829B0D21E44D3BBCBC534 /* libPods.a */; };
+		CC596C8B191FEF8700ED8A57 /* OPLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */; };
 		CCA1A91D191FE74900D4415D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A91C191FE74900D4415D /* Foundation.framework */; };
 		CCA1A91F191FE74900D4415D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A91E191FE74900D4415D /* CoreGraphics.framework */; };
 		CCA1A921191FE74900D4415D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A920191FE74900D4415D /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75B829B0D21E44D3BBCBC534 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC596C89191FEF8700ED8A57 /* OPLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPLocationProvider.h; sourceTree = "<group>"; };
+		CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLocationProvider.m; sourceTree = "<group>"; };
 		CCA1A919191FE74900D4415D /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1A91C191FE74900D4415D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCA1A91E191FE74900D4415D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,6 +59,7 @@
 		CCA1A945191FE74A00D4415D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CCA1A947191FE74A00D4415D /* LocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		CCA1A951191FE7B300D4415D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		E337D171C94F4999B29691F0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 				CCA1A91F191FE74900D4415D /* CoreGraphics.framework in Frameworks */,
 				CCA1A921191FE74900D4415D /* UIKit.framework in Frameworks */,
 				CCA1A91D191FE74900D4415D /* Foundation.framework in Frameworks */,
+				12AD3070A21C4CFF99BD6277 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +94,7 @@
 				CCA1A941191FE74A00D4415D /* LocationTests */,
 				CCA1A91B191FE74900D4415D /* Frameworks */,
 				CCA1A91A191FE74900D4415D /* Products */,
+				E337D171C94F4999B29691F0 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +114,7 @@
 				CCA1A91E191FE74900D4415D /* CoreGraphics.framework */,
 				CCA1A920191FE74900D4415D /* UIKit.framework */,
 				CCA1A93B191FE74A00D4415D /* XCTest.framework */,
+				75B829B0D21E44D3BBCBC534 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,6 +129,8 @@
 				CCA1A932191FE74900D4415D /* OPViewController.m */,
 				CCA1A934191FE74900D4415D /* Images.xcassets */,
 				CCA1A923191FE74900D4415D /* Supporting Files */,
+				CC596C89191FEF8700ED8A57 /* OPLocationProvider.h */,
+				CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -161,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCA1A94B191FE74A00D4415D /* Build configuration list for PBXNativeTarget "Location" */;
 			buildPhases = (
+				7AE7522ED00741D284CE21FF /* Check Pods Manifest.lock */,
 				CCA1A915191FE74900D4415D /* Sources */,
 				CCA1A916191FE74900D4415D /* Frameworks */,
 				CCA1A917191FE74900D4415D /* Resources */,
+				4F7F9C2DA2D549CE871E1CBF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +260,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F7F9C2DA2D549CE871E1CBF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE7522ED00741D284CE21FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCA1A915191FE74900D4415D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -254,6 +300,7 @@
 			files = (
 				CCA1A929191FE74900D4415D /* main.m in Sources */,
 				CCA1A92D191FE74900D4415D /* OPAppDelegate.m in Sources */,
+				CC596C8B191FEF8700ED8A57 /* OPLocationProvider.m in Sources */,
 				CCA1A933191FE74900D4415D /* OPViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +423,7 @@
 		};
 		CCA1A94C191FE74A00D4415D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E337D171C94F4999B29691F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +437,7 @@
 		};
 		CCA1A94D191FE74A00D4415D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E337D171C94F4999B29691F0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -459,6 +508,7 @@
 				CCA1A94D191FE74A00D4415D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCA1A94E191FE74A00D4415D /* Build configuration list for PBXNativeTarget "LocationTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +517,7 @@
 				CCA1A950191FE74A00D4415D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

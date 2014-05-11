@@ -1,0 +1,14 @@
+PODS:
+  - ObjectivePim (0.1.1)
+
+DEPENDENCIES:
+  - ObjectivePim (from `../../ObjectivePim.podspec`)
+
+EXTERNAL SOURCES:
+  ObjectivePim:
+    :path: ../../ObjectivePim.podspec
+
+SPEC CHECKSUMS:
+  ObjectivePim: 1a35340cafb51af021ff86a5bd2e60b092a6bb7c
+
+COCOAPODS: 0.32.1
