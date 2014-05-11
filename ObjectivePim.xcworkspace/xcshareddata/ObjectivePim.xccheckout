@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>888A0565-4D0C-4037-AA12-E59C6A57F24F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ObjectivePim</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DAE521CE-BCF8-4BE6-B03A-3DCF21A2ED26</key>
+		<string>ssh://github.com/vbergae/ObjectivePim.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ObjectivePim.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DAE521CE-BCF8-4BE6-B03A-3DCF21A2ED26</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/vbergae/ObjectivePim.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DAE521CE-BCF8-4BE6-B03A-3DCF21A2ED26</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DAE521CE-BCF8-4BE6-B03A-3DCF21A2ED26</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ObjectivePim</string>
+		</dict>
+	</array>
+</dict>
+</plist>
