@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12AD3070A21C4CFF99BD6277 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B829B0D21E44D3BBCBC534 /* libPods.a */; };
 		CC596C8B191FEF8700ED8A57 /* OPLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */; };
+		CC6DD8C41921564800EE3F47 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CC6DD8C31921564800EE3F47 /* README */; };
 		CCA1A91D191FE74900D4415D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A91C191FE74900D4415D /* Foundation.framework */; };
 		CCA1A91F191FE74900D4415D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A91E191FE74900D4415D /* CoreGraphics.framework */; };
 		CCA1A921191FE74900D4415D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1A920191FE74900D4415D /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 		75B829B0D21E44D3BBCBC534 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC596C89191FEF8700ED8A57 /* OPLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPLocationProvider.h; sourceTree = "<group>"; };
 		CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLocationProvider.m; sourceTree = "<group>"; };
+		CC6DD8C31921564800EE3F47 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		CCA1A919191FE74900D4415D /* Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1A91C191FE74900D4415D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCA1A91E191FE74900D4415D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		CCA1A910191FE74900D4415D = {
 			isa = PBXGroup;
 			children = (
+				CC6DD8C31921564800EE3F47 /* README */,
 				CCA1A922191FE74900D4415D /* Location */,
 				CCA1A941191FE74A00D4415D /* LocationTests */,
 				CCA1A91B191FE74900D4415D /* Frameworks */,
@@ -122,6 +125,8 @@
 		CCA1A922191FE74900D4415D /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				CC596C89191FEF8700ED8A57 /* OPLocationProvider.h */,
+				CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */,
 				CCA1A92B191FE74900D4415D /* OPAppDelegate.h */,
 				CCA1A92C191FE74900D4415D /* OPAppDelegate.m */,
 				CCA1A92E191FE74900D4415D /* Main.storyboard */,
@@ -129,8 +134,6 @@
 				CCA1A932191FE74900D4415D /* OPViewController.m */,
 				CCA1A934191FE74900D4415D /* Images.xcassets */,
 				CCA1A923191FE74900D4415D /* Supporting Files */,
-				CC596C89191FEF8700ED8A57 /* OPLocationProvider.h */,
-				CC596C8A191FEF8700ED8A57 /* OPLocationProvider.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6DD8C41921564800EE3F47 /* README in Resources */,
 				CCA1A935191FE74900D4415D /* Images.xcassets in Resources */,
 				CCA1A927191FE74900D4415D /* InfoPlist.strings in Resources */,
 				CCA1A930191FE74900D4415D /* Main.storyboard in Resources */,
