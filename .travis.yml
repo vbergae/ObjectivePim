@@ -1,7 +1,8 @@
 language: objective-c
 
 before_install:
-  - gem install cocoapods -v 0.32.1 --no-ri --no-doc  
+  - export LANG=en_US.UTF-8
+  - gem update cocoapods  
   - brew update
   - brew upgrade xctool
 
