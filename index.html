@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>ObjectivePim by vbergae</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>ObjectivePim</h1>
+        <h2>ObjectivePim is a small Dependency Injection Container for Objective-C based on Pimple&#39;s source</h2>
+        <a href="https://github.com/vbergae/ObjectivePim" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="objectivepim" class="anchor" href="#objectivepim"><span class="octicon octicon-link"></span></a>ObjectivePim</h1>
+
+<p><a href="https://travis-ci.org/vbergae/ObjectivePim"><img src="https://travis-ci.org/vbergae/ObjectivePim.svg?branch=master" alt="Build Status"></a></p>
+
+<p>ObjectivePim is a small Dependency Injection Container for Objective-C based on <a href="https://github.com/fabpot/Pimple">Pimple</a>'s source code (including this file :P).</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a> Installation</h2>
+
+<p>The supported way to get ObjectivePim is using <a href="http://cocoapods.org/">CocoaPods</a>.</p>
+
+<p>Add ObjectivePim to your Podfile:</p>
+
+<pre><code>platform :ios, '6.1'
+
+pod 'ObjectivePim'
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Creating a container is a matter of instating the <code>OPContainer</code> class</p>
+
+<pre><code>#import &lt;ObjectivePim/ObjectivePim.h&gt;
+
+OPContainer *container = OPContainer.new;
+</code></pre>
+
+<p>As many other dependency injection containers, ObjectivePim is able to manage two
+different kind of data: <em>services</em> and <em>parameters</em>.</p>
+
+<h3>
+<a name="defining-parameters" class="anchor" href="#defining-parameters"><span class="octicon octicon-link"></span></a>Defining Parameters</h3>
+
+<p>Defining a parameter is as simple as using the ObjectivePim instance as a dictionary:</p>
+
+<pre><code>// define some parameters
+container[@"foo"] = @"bar";
+container[@"default_items"] = @5;
+</code></pre>
+
+<h3>
+<a name="defining-services" class="anchor" href="#defining-services"><span class="octicon octicon-link"></span></a>Defining Services</h3>
+
+<p>A service is an object that does something as part of a larger system.
+Examples of services: Database connection, templating engine, mailer. Almost
+any object could be a service.</p>
+
+<p>Services are defined by blocks that return an instance of an object</p>
+
+<pre><code>// define some services
+container[@"service"] = ^(void) {
+    return Foo.new;
+};
+
+__block OPContainer *container = OPContainer.new;
+container[@"other_service"] = ^(void) {
+    return [[Bar alloc] initWithValue:container[@"value"]];
+};
+</code></pre>
+
+<p>Notice that, in the second example, the block has access to the current container instance, 
+allowing references to other services or parameters.</p>
+
+<p>As objects are only created when you get them, the order of the definitions
+does not matter, and there is no performance penalty.</p>
+
+<p>Using the defined services is also very easy</p>
+
+<pre><code>// get the service object
+id service = container[@"service"];
+</code></pre>
+
+<h3>
+<a name="protecting-parameters" class="anchor" href="#protecting-parameters"><span class="octicon octicon-link"></span></a>Protecting Parameters</h3>
+
+<p>Because ObjectivePim sees blocks as service definitions, you need to
+wrap blocks with the <code>protect:</code> method to store them as
+parameter</p>
+
+<pre><code>container[@"random"] = [container protect:^(void){
+    return @(arc4random());
+}];
+</code></pre>
+
+<h3>
+<a name="modifying-services-after-creation" class="anchor" href="#modifying-services-after-creation"><span class="octicon octicon-link"></span></a>Modifying services after creation</h3>
+
+<p>In some cases you may want to modify a service definition after it has been
+defined. You can use the <code>extend:</code> method to define additional code to
+be run on your service just after it is created</p>
+
+<pre><code>container[@"afnetworking"] = ^(void) {
+    NSURL *baseURL = [NSURL URLWithString:@"http://somehost.com"];
+
+    return [[AFAppDotNetAPIClient alloc] 
+             initWithBaseURL:baseURL];
+};
+
+[container extend:@"afnetworking" withCode:^(id service, OPContainer *container) {
+    AFAppDotNetAPIClient *client = (AFAppDotNetAPIClient *)service;
+
+    client.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+}];
+</code></pre>
+
+<p>The first argument is the name of the object, the second is a block that
+gets access to the object instance and the container.</p>
+
+<h3>
+<a name="extending-a-container" class="anchor" href="#extending-a-container"><span class="octicon octicon-link"></span></a>Extending a Container</h3>
+
+<p>If you use the same libraries over and over, you might want to reuse some
+services from one project to the other; package your services into a
+<strong>provider</strong> by implementing <code>OPServiceProviderProtocol</code>:</p>
+
+<pre><code>@interface FooProvider : NSObject&lt;OPServiceProviderProtocol&gt;
+
+@end 
+
+@implementation FooProvider
+
+- (NSString *)identifier
+{
+    return @"foo";
+}
+
+- (void)registerProvider:(OPContainer *)container
+{
+    // register some services and parameters
+    // on container
+}
+
+@end
+</code></pre>
+
+<p>Then, the provider can be easily registered on a Container:</p>
+
+<pre><code>[container register:FooProvider.new];
+
+FooProvider *foo = container[@"foo"];
+</code></pre>
+
+<h3>
+<a name="defining-factory-services" class="anchor" href="#defining-factory-services"><span class="octicon octicon-link"></span></a>Defining Factory Services</h3>
+
+<p>By default, each time you get a service, ObjectivePim returns the <strong>same instance</strong>
+of it. If you want a different instance to be returned for all calls, wrap your
+block with the <code>factory:</code> method</p>
+
+<pre><code>container[@"service"] = [container factory:^(OPContainer *container) {
+    return [[Foo alloc] initWithValue:container[@"key_to_value"]];
+}];
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/vbergae/ObjectivePim/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/vbergae/ObjectivePim/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/vbergae/ObjectivePim"></a> is maintained by <a href="https://github.com/vbergae">vbergae</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
