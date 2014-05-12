@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 Víctor Berga. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreLocation;
 
-@interface OPLocationProvider : NSObject<OPServiceProviderProtocol>
+@interface OPLocationProvider : NSObject
+<OPServiceProviderProtocol, CLLocationManagerDelegate>
+
+- (void)updateLocations:(void(^)(NSArray *locations, NSError *error))handler;
 
 @end
