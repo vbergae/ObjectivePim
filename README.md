@@ -21,7 +21,7 @@ Add ObjectivePim to your Podfile:
 
 Creating a container is a matter of instating the ``OPContainer`` class
 
-    #import "OPContainer.h"
+    #import <ObjectivePim/ObjectivePim.h>
 
     OPContainer *container = OPContainer.new;
 
@@ -110,6 +110,11 @@ services from one project to the other; package your services into a
 	
 	@implementation FooProvider
 	
+    - (NSString *)identifier
+    {
+        return @"foo";
+    }
+
 	- (void)registerProvider:(OPContainer *)container
 	{
 		// register some services and parameters
@@ -121,6 +126,8 @@ services from one project to the other; package your services into a
 Then, the provider can be easily registered on a Container:
 
     [container register:FooProvider.new];
+    
+    FooProvider *foo = container[@"foo"];
 
 ### Defining Factory Services
 
