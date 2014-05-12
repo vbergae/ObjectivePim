@@ -181,7 +181,11 @@ static BOOL IsBlock(id object)
 {
     NSParameterAssert(provider);
     
-    [provider registerProvider:self];
+    if ([provider respondsToSelector:@selector(registerProvider:)]) {
+        [provider registerProvider:self];        
+    }
+    
+    
     self[provider.identifier] = provider;
     
     return self;

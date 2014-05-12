@@ -29,6 +29,8 @@
  */
 @property (readonly) NSString *identifier;
 
+@optional
+
 /**
  * Registers services on the given container.
  *
