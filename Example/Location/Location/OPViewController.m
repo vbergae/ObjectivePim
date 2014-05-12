@@ -7,6 +7,7 @@
 //
 
 #import "OPViewController.h"
+#import "OPLocationProvider.h"
 
 @interface OPViewController ()
 
@@ -19,9 +20,14 @@
     [super viewDidLoad];
     
     UIApplication *application = UIApplication.sharedApplication;
-    NSString *value = application.container[@"value"];
-    
-    NSLog(@"Value: %@", value);
+    OPLocationProvider *location = application.container[@"location"];
+    [location updateLocations:^(NSArray *locations, NSError *error) {
+        if (error) {
+            NSLog(@"Error updating location: %@", error);
+        } else {
+            NSLog(@"Locations: %@", locations);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
