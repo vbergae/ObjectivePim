@@ -52,11 +52,6 @@
     return @"location";
 }
 
-- (void)registerProvider:(OPContainer *)container
-{
-
-}
-
 #pragma mark -
 #pragma mark CLLocationManagerDelegate
 
