@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
 #import "OPContainer.h"
 
 @interface Foo : NSObject
@@ -184,6 +186,21 @@
     XCTAssertTrue([serviceTwo isKindOfClass:Foo.class]);
     XCTAssertFalse(serviceOne == serviceTwo);
     XCTAssertFalse(serviceOne.bar == serviceTwo.bar);
+}
+
+- (void)testResgisterProvider
+{
+    id provider = [OCMockObject niceMockForProtocol:
+                   @protocol(OPServiceProviderProtocol)];
+
+    [[[provider stub] andReturn:@"provider"] identifier];
+    [(id<OPServiceProviderProtocol>)[provider expect]
+     registerProvider:self.pim];
+
+    [self.pim registerProvider:provider];
+    
+    XCTAssertNoThrow([provider verify]);
+    XCTAssertTrue(self.pim[@"provider"] == provider);
 }
 
 @end

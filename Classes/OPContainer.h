@@ -25,6 +25,11 @@
 @required
 
 /**
+ Returns an unique identifier used by OPContainer as service's key
+ */
+@property (readonly) NSString *identifier;
+
+/**
  * Registers services on the given container.
  *
  * This method should only be used to configure services and parameters.
@@ -125,9 +130,12 @@
  * @param provider A ServiceProviderInterface instance
  * @param params An array of values that customizes the provider
  *
+ * @warning This method has been deprecated since 0.1.2 and will be
+ * removed on 0.2.0
+ *
  * @return self
  */
 - (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
-                          params:(NSDictionary *)params;
+                             params:(NSDictionary *)params __deprecated;
 
 @end

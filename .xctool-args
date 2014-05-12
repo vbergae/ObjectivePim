@@ -1,5 +1,5 @@
 [
-  "-project", "ObjectivePim.xcodeproj",
+  "-workspace", "ObjectivePim.xcworkspace",
   "-scheme", "ObjectivePim",
   "-sdk", "iphonesimulator",
 ]

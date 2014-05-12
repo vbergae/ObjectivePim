@@ -179,21 +179,18 @@ static BOOL IsBlock(id object)
 
 - (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
 {
-    return [self registerProvider:provider params:nil];
-}
-
-- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
-                          params:(NSDictionary *)params
-{
     NSParameterAssert(provider);
     
     [provider registerProvider:self];
-    
-    for (NSString *key in params) {
-        self[key] = params[key];
-    }
+    self[provider.identifier] = provider;
     
     return self;
+}
+
+- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
+                             params:(NSDictionary *)params
+{
+    return [self registerProvider:provider];
 }
 
 @end
