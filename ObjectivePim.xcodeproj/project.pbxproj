@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91EB9F72DF54B128D1F49BF /* libPods-ObjectivePimTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1DA5A4A234B46BE43730B /* libPods-ObjectivePimTests.a */; };
 		CC0FD13419003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
 		CC0FD14219003F64004CD983 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD14119003F64004CD983 /* XCTest.framework */; };
 		CC0FD14319003F64004CD983 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FD13319003F63004CD983 /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectivePimTests.xcconfig"; path = "Pods/Pods-ObjectivePimTests.xcconfig"; sourceTree = "<group>"; };
+		B3C1DA5A4A234B46BE43730B /* libPods-ObjectivePimTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectivePimTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13019003F63004CD983 /* libObjectivePim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectivePim.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13319003F63004CD983 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CC0FD14019003F64004CD983 /* ObjectivePimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjectivePimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,12 +56,12 @@
 		CC56E37B191C0796003B2FFD /* OPContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OPContainer.m; path = Classes/OPContainer.m; sourceTree = SOURCE_ROOT; };
 		CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ObjectivePim.h"; path = "Classes/UIApplication+ObjectivePim.h"; sourceTree = SOURCE_ROOT; };
 		CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ObjectivePim.m"; path = "Classes/UIApplication+ObjectivePim.m"; sourceTree = SOURCE_ROOT; };
-		CC56E380191C09E6003B2FFD /* CHANGELOG */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		CC56E382191C0A6D003B2FFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Tests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		CC56E383191C0A6D003B2FFD /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ObjectivePimTests-Info.plist"; path = "Tests/ObjectivePimTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectivePimTests.m; path = Tests/ObjectivePimTests.m; sourceTree = SOURCE_ROOT; };
 		CC85D72919197DA5005438E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		CC85D72A1919861A005438E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		CCAC14471920C08A00C74AA1 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 				CC0FD14219003F64004CD983 /* XCTest.framework in Frameworks */,
 				CC0FD14519003F64004CD983 /* UIKit.framework in Frameworks */,
 				CC0FD14319003F64004CD983 /* Foundation.framework in Frameworks */,
+				A91EB9F72DF54B128D1F49BF /* libPods-ObjectivePimTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 				CC0FD14919003F64004CD983 /* ObjectivePimTests */,
 				CC0FD13219003F63004CD983 /* Frameworks */,
 				CC0FD13119003F63004CD983 /* Products */,
+				8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +114,7 @@
 				CC0FD13319003F63004CD983 /* Foundation.framework */,
 				CC0FD14119003F64004CD983 /* XCTest.framework */,
 				CC0FD14419003F64004CD983 /* UIKit.framework */,
+				B3C1DA5A4A234B46BE43730B /* libPods-ObjectivePimTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,11 +136,11 @@
 		CC0FD13619003F64004CD983 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC14471920C08A00C74AA1 /* CHANGELOG */,
 				CC56E378191C0796003B2FFD /* ObjectivePim-Prefix.pch */,
 				CC85D72919197DA5005438E1 /* README.md */,
 				CC85D72A1919861A005438E1 /* LICENSE */,
 				CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */,
-				CC56E380191C09E6003B2FFD /* CHANGELOG */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC0FD15619003F64004CD983 /* Build configuration list for PBXNativeTarget "ObjectivePimTests" */;
 			buildPhases = (
+				684EF7A28075492E88FCC026 /* Check Pods Manifest.lock */,
 				CC0FD13C19003F64004CD983 /* Sources */,
 				CC0FD13D19003F64004CD983 /* Frameworks */,
 				CC0FD13E19003F64004CD983 /* Resources */,
+				68F9A1EDF0F747EF83CFECA3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +240,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		684EF7A28075492E88FCC026 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68F9A1EDF0F747EF83CFECA3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-ObjectivePimTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC0FD12C19003F63004CD983 /* Sources */ = {
@@ -369,6 +410,7 @@
 		};
 		CC0FD15719003F64004CD983 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -389,6 +431,7 @@
 		};
 		CC0FD15819003F64004CD983 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
