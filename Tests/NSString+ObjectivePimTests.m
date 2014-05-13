@@ -32,4 +32,15 @@
     XCTAssertTrue(target.isKeyPath);
 }
 
+- (void)testRootKey
+{
+    NSDictionary *fixture = @{@"foo.bar": @"foo",
+                              @"foo" : NSNull.null,
+                              @"foo.bar.other" : @"foo"};
+    for (NSString *key in fixture) {
+        NSString *root = [key rootKey];
+        XCTAssertEqualObjects(root, fixture[key]);
+    }
+}
+
 @end

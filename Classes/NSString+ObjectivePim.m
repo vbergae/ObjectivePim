@@ -15,4 +15,16 @@
     return [self rangeOfString:@"."].location != NSNotFound ? YES : NO;
 }
 
+- (NSString *)rootKey
+{
+    NSString *root = nil;
+    
+    if (self.isKeyPath) {
+        NSRange firstDotRange = [self rangeOfString:@"."];
+        root = [self substringToIndex:firstDotRange.location];
+    }
+    
+    return root;
+}
+
 @end
