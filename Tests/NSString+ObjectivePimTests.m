@@ -34,13 +34,30 @@
 
 - (void)testRootKey
 {
-    NSDictionary *fixture = @{@"foo.bar": @"foo",
-                              @"foo" : NSNull.null,
-                              @"foo.bar.other" : @"foo"};
-    for (NSString *key in fixture) {
-        NSString *root = [key rootKey];
-        XCTAssertEqualObjects(root, fixture[key]);
-    }
+    NSString *keyPath;
+    
+    keyPath = @"foo.bar";
+    XCTAssertEqualObjects(keyPath.rootKey, @"foo");
+    
+    keyPath = @"foo";
+    XCTAssertNil(keyPath.rootKey);
+    
+    keyPath = @"foo.bar.other";
+    XCTAssertEqualObjects(keyPath.rootKey, @"foo");
+}
+
+- (void)testRelativeKeyPath
+{
+    NSString *keyPath;
+    
+    keyPath = @"one.two.three";
+    XCTAssertEqualObjects(keyPath.relativeKeyPath, @"two.three");
+    
+    keyPath = @"one";
+    XCTAssertNil(keyPath.relativeKeyPath);
+    
+    keyPath = @"one.two";
+    XCTAssertEqualObjects(keyPath.relativeKeyPath, @"two");
 }
 
 @end

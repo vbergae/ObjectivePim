@@ -25,11 +25,14 @@
 @property (readonly, getter = isKeyPath) BOOL keyPath;
 
 /**
- Returns root key if the receiver is a KeyPath, otherside returns NO. 
+ Returns root key if the receiver is a KeyPath, otherside returns nil.
  @see isKeyPath
- 
- @return Root key if the receiver is a valid keyPath
  */
-- (NSString *)rootKey;
+@property (readonly) NSString *rootKey;
+
+/**
+ Returns the KeyPath relative to 'rootKey' object
+ */
+@property (readonly) NSString *relativeKeyPath;
 
 @end
