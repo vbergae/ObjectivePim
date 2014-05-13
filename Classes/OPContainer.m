@@ -82,8 +82,8 @@ static BOOL IsBlock(id object)
 }
 
 - (OP_INSTANCETYPE)initWithObjects:(const id [])objects
-                        forKeys:(const id<NSCopying> [])keys
-                          count:(NSUInteger)cnt
+                           forKeys:(const id<NSCopying> [])keys
+                             count:(NSUInteger)cnt
 {
     self = [super init];
     if (self) {
