@@ -8,6 +8,10 @@
 
 #import "OPContainer.h"
 
+/**
+ @name Helper functions
+ */
+
 static BOOL IsBlock(id object)
 {
     // Checks if the value is a block
@@ -20,6 +24,10 @@ static BOOL IsBlock(id object)
     
     return ([object isKindOfClass:blockClass]) ? YES : NO;
 }
+
+/**
+ @name Factory class
+ */
 
 @interface Factory : NSObject
 
@@ -42,6 +50,10 @@ static BOOL IsBlock(id object)
 }
 
 @end
+
+/**
+ @name OPContainer's implementation
+ */
 
 @interface OPContainer()
 
