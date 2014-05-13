@@ -7,6 +7,7 @@
 //
 
 #import "OPContainer.h"
+#import "NSString+ObjectivePim.h"
 
 /**
  @name Helper functions
@@ -59,6 +60,8 @@ static BOOL IsBlock(id object)
 
 @property NSMutableDictionary *dictionary;
 @property NSMutableDictionary *extensions;
+
+- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey;
 
 @end
 
@@ -155,7 +158,13 @@ static BOOL IsBlock(id object)
     NSParameterAssert(anObject);
     NSParameterAssert(aKey);
     
-    [self.dictionary setObject:anObject forKey:aKey];
+    if ([(NSObject *)aKey isKindOfClass:NSString.class]
+        && ![(NSString *)aKey isKeyPath])
+    {
+        [self.dictionary setObject:anObject forKey:aKey];
+    } else {
+        [self setObject:anObject forKeyPath:aKey];
+    }
 }
 
 - (void)removeObjectForKey:(id)aKey
@@ -206,6 +215,15 @@ static BOOL IsBlock(id object)
                              params:(NSDictionary *)params
 {
     return [self registerProvider:provider];
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey
+{
+    NSString *objectKey = [(NSString *)aKey rootKey];
+    
 }
 
 @end
