@@ -17,6 +17,8 @@
 		CC56E37F191C0796003B2FFD /* UIApplication+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */; };
 		CC56E385191C0A6D003B2FFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC56E381191C0A6D003B2FFD /* InfoPlist.strings */; };
 		CC56E387191C0A6D003B2FFD /* ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */; };
+		CC772D7C19227498006D0319 /* NSString+ObjectivePim.m in Sources */ = {isa = PBXBuildFile; fileRef = CC772D7B19227498006D0319 /* NSString+ObjectivePim.m */; };
+		CC772D7E192274C6006D0319 /* NSString+ObjectivePimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC772D7D192274C6006D0319 /* NSString+ObjectivePimTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		CC56E383191C0A6D003B2FFD /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ObjectivePimTests-Info.plist"; path = "Tests/ObjectivePimTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectivePimTests.m; path = Tests/ObjectivePimTests.m; sourceTree = SOURCE_ROOT; };
 		CC772D7919226633006D0319 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CONTRIBUTING.md; sourceTree = SOURCE_ROOT; };
+		CC772D7A19227498006D0319 /* NSString+ObjectivePim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ObjectivePim.h"; path = "Classes/NSString+ObjectivePim.h"; sourceTree = SOURCE_ROOT; };
+		CC772D7B19227498006D0319 /* NSString+ObjectivePim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ObjectivePim.m"; path = "Classes/NSString+ObjectivePim.m"; sourceTree = SOURCE_ROOT; };
+		CC772D7D192274C6006D0319 /* NSString+ObjectivePimTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ObjectivePimTests.m"; path = "Tests/NSString+ObjectivePimTests.m"; sourceTree = SOURCE_ROOT; };
 		CC85D72919197DA5005438E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		CC85D72A1919861A005438E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		CCAC14471920C08A00C74AA1 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = SOURCE_ROOT; };
@@ -129,6 +134,8 @@
 				CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */,
 				CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */,
 				CC0FD13619003F64004CD983 /* Supporting Files */,
+				CC772D7A19227498006D0319 /* NSString+ObjectivePim.h */,
+				CC772D7B19227498006D0319 /* NSString+ObjectivePim.m */,
 			);
 			name = Classes;
 			path = ObjectivePim;
@@ -152,6 +159,7 @@
 			children = (
 				CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */,
 				CC0FD14A19003F64004CD983 /* Supporting Files */,
+				CC772D7D192274C6006D0319 /* NSString+ObjectivePimTests.m */,
 			);
 			path = ObjectivePimTests;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC772D7C19227498006D0319 /* NSString+ObjectivePim.m in Sources */,
 				CC56E37F191C0796003B2FFD /* UIApplication+ObjectivePim.m in Sources */,
 				CC56E37E191C0796003B2FFD /* OPContainer.m in Sources */,
 			);
@@ -290,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC772D7E192274C6006D0319 /* NSString+ObjectivePimTests.m in Sources */,
 				CC56E387191C0A6D003B2FFD /* ObjectivePimTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
