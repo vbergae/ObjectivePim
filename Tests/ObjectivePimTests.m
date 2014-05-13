@@ -15,6 +15,8 @@
 
 @property NSString *bar;
 
+@property Foo *child;
+
 @end
 
 
@@ -62,14 +64,37 @@
 
 - (void)testWithKeyPath
 {
+    // Prepares two services
     self.pim[@"foo"] = ^(void) {
         return Foo.new;
     };
+    self.pim[@"foo_child"] = ^(void) {
+        return Foo.new;
+    };
+    [self.pim extend:@"foo_child"
+            withCode:^(id service, OPContainer *container)
+    {
+        [(Foo *) service setChild:Foo.new];
+    }];
     
+    // Stores values
     self.pim[@"foo.bar"] = @"value";
+    self.pim[@"foo_child.child.bar"] = @"value";
     
+    // Checks values from his instance
     Foo *foo = self.pim[@"foo"];
+    Foo *foo_child = self.pim[@"foo_child"];
+    
     XCTAssertEqualObjects(foo.bar, @"value");
+    XCTAssertNil(foo.child);
+    XCTAssertNil(foo_child.bar);
+    XCTAssertEqualObjects(foo_child.child.bar, @"value");
+    
+    // Checks values using keypaths
+    XCTAssertEqualObjects(self.pim[@"foo.bar"], @"value");
+    XCTAssertNil(self.pim[@"foo.child"]);
+    XCTAssertNil(self.pim[@"foo_child.bar"]);
+    XCTAssertEqualObjects(self.pim[@"foo_child.child.bar"], @"value");
 }
 
 - (void)testWithBlock

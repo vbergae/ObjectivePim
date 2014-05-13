@@ -62,6 +62,7 @@ static BOOL IsBlock(id object)
 @property NSMutableDictionary *extensions;
 
 - (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey;
+- (id)objectForKeyPath:(id)aKey;
 
 @end
 
@@ -119,6 +120,12 @@ static BOOL IsBlock(id object)
 
 - (id)objectForKey:(id)aKey
 {
+    if ([(NSObject *)aKey isKindOfClass:NSString.class]
+        && [(NSString *)aKey isKeyPath])
+    {
+        return [self objectForKeyPath:aKey];
+    }
+    
     id object = self.dictionary[aKey];
     NSParameterAssert(object);
     
@@ -224,6 +231,16 @@ static BOOL IsBlock(id object)
 {
     NSString *objectKey = [(NSString *)aKey rootKey];
     
+    id object = self[objectKey];
+    [object setValue:anObject forKeyPath:[(NSString *)aKey relativeKeyPath]];
+}
+
+- (id)objectForKeyPath:(id)aKey
+{
+    NSString *objectKey = [(NSString *)aKey rootKey];
+    
+    id object = self[objectKey];
+    return [object valueForKeyPath:[(NSString *)aKey relativeKeyPath]];
 }
 
 @end
