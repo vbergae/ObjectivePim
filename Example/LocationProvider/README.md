@@ -104,7 +104,7 @@ Steps to create a service provider are:
     	return YES;
 	}
 	
-### Use you service on any place! ###
+### Use your service at any place! ###
 
 *OPViewController*
 
