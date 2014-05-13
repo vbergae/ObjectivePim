@@ -52,6 +52,18 @@
     XCTAssertEqualObjects(self.pim[@"param"], @"value");
 }
 
+- (void)testWithKeyPath
+{
+    self.pim[@"foo"] = ^(void) {
+        return Foo.new;
+    };
+    
+    self.pim[@"foo.bar"] = @"value";
+    
+    Foo *foo = self.pim[@"foo"];
+    XCTAssertEqualObjects(foo.bar, @"value");
+}
+
 - (void)testWithBlock
 {
     self.pim[@"service"] = ^(void) {
