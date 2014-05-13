@@ -45,6 +45,14 @@
     [super tearDown];
 }
 
+- (void)testInitWithParams
+{
+    OPContainer *container = [[OPContainer alloc]
+                              initWithParams:@{@"bar" : @"value"}];
+    
+    XCTAssertEqualObjects(container[@"bar"], @"value");
+}
+
 - (void)testWithString
 {
     self.pim[@"param"] = @"value";
