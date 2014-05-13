@@ -2,7 +2,7 @@
 
 ## Location ##
 
-Location is a simple example projects which shows how to encapsulate quick access to user's location values using ObjectivePim.
+Location is a simple example project which shows how to encapsulate quick access to user's location values using ObjectivePim.
 
 Steps to create a service provider are:
 
