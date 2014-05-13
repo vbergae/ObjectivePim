@@ -47,7 +47,6 @@ static BOOL IsBlock(id object)
 
 @property NSMutableDictionary *dictionary;
 @property NSMutableDictionary *extensions;
-@property NSMutableDictionary *factories;
 
 @end
 
