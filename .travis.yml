@@ -1,11 +1,7 @@
 language: objective-c
 
 before_install:
-  - export LANG=en_US.UTF-8
-  - gem update cocoapods  
-  - brew update
-  - brew upgrade xctool
+  - sh script/bootstrap
 
 script:
-  - xctool ONLY_ACTIVE_ARCH=NO
-  - xctool test ONLY_ACTIVE_ARCH=NO
+  - sh script/test
