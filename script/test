@@ -2,5 +2,4 @@
 
 set -e
 
-friction
 xctool test ONLY_ACTIVE_ARCH=NO
