@@ -59,6 +59,7 @@
 		CC56E382191C0A6D003B2FFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Tests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		CC56E383191C0A6D003B2FFD /* ObjectivePimTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ObjectivePimTests-Info.plist"; path = "Tests/ObjectivePimTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectivePimTests.m; path = Tests/ObjectivePimTests.m; sourceTree = SOURCE_ROOT; };
+		CC772D7919226633006D0319 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CONTRIBUTING.md; sourceTree = SOURCE_ROOT; };
 		CC85D72919197DA5005438E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		CC85D72A1919861A005438E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		CCAC14471920C08A00C74AA1 /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = SOURCE_ROOT; };
@@ -136,9 +137,10 @@
 		CC0FD13619003F64004CD983 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CCAC14471920C08A00C74AA1 /* CHANGELOG */,
 				CC56E378191C0796003B2FFD /* ObjectivePim-Prefix.pch */,
 				CC85D72919197DA5005438E1 /* README.md */,
+				CC772D7919226633006D0319 /* CONTRIBUTING.md */,
+				CCAC14471920C08A00C74AA1 /* CHANGELOG */,
 				CC85D72A1919861A005438E1 /* LICENSE */,
 				CC1CA075191A201F00D33AEE /* ObjectivePim.podspec */,
 			);
