@@ -64,7 +64,8 @@ static BOOL IsBlock(id object)
 - (id)rootObjectForKeyPath:(id)aKey;
 - (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey;
 - (id)objectForKeyPath:(id)aKey;
-
+- (void)extendService:(id)aKey object:(id)object;
+- (BOOL)bootService:(id *)object_p withKey:(id)aKey;
 
 @end
 
@@ -122,37 +123,19 @@ static BOOL IsBlock(id object)
 
 - (id)objectForKey:(id)aKey
 {
+    id object = nil;
+    
     if ([(NSObject *)aKey isKindOfClass:NSString.class]
         && [(NSString *)aKey isKeyPath])
     {
-        return [self objectForKeyPath:aKey];
-    }
-    
-    id object = self.dictionary[aKey];
-    NSParameterAssert(object);
-    
-    BOOL needToExtend = NO;
-    if (IsBlock(object)) {
-        id(^block)(void) = object;
-        object = block();
+        object = [self objectForKeyPath:aKey];
+    } else {
+        object = self.dictionary[aKey];
+        NSParameterAssert(object);
         
-        [self.dictionary setObject:object forKey:aKey];
-        needToExtend = YES;
-    } else if ([object isKindOfClass:Factory.class]) {
-        id(^block)(OPContainer *) = [(Factory *)object block];
-        object = block(self);
-        needToExtend = YES;
-    }
-    
-    if (needToExtend) {
-        id extension = self.extensions[aKey];
-        if (IsBlock(extension)) {
-            void(^extensionBlock)(id, OPContainer *) = extension;
-            extensionBlock(object, self);
-        } else if ([extension isKindOfClass:NSMutableArray.class]) {
-            for (void(^extensionBlock)(id, OPContainer *) in (NSMutableArray *)extension) {
-                extensionBlock(object, self);
-            }
+        BOOL needToExtend = [self bootService:&object withKey:aKey];
+        if (needToExtend) {
+            [self extendService:aKey object:object];
         }
     }
     
@@ -263,6 +246,37 @@ static BOOL IsBlock(id object)
     id object = [self rootObjectForKeyPath:aKey];
     
     return [object valueForKeyPath:[(NSString *)aKey relativeKeyPath]];
+}
+
+- (void)extendService:(id)aKey object:(id)object
+{
+    id extension = self.extensions[aKey];
+    if (IsBlock(extension)) {
+        void(^extensionBlock)(id, OPContainer *) = extension;
+        extensionBlock(object, self);
+    } else if ([extension isKindOfClass:NSMutableArray.class]) {
+        for (void(^extensionBlock)(id, OPContainer *) in (NSMutableArray *)extension) {
+            extensionBlock(object, self);
+        }
+    }
+}
+
+- (BOOL)bootService:(id *)object_p withKey:(id)aKey
+{
+    BOOL needToExtend = NO;
+    if (IsBlock(*object_p)) {
+        id(^block)(void) = *object_p;
+        *object_p = block();
+        
+        [self.dictionary setObject:*object_p forKey:aKey];
+        needToExtend = YES;
+    } else if ([*object_p isKindOfClass:Factory.class]) {
+        id(^block)(OPContainer *) = [(Factory *)*object_p block];
+        *object_p = block(self);
+        needToExtend = YES;
+    }
+    
+    return needToExtend;
 }
 
 @end
