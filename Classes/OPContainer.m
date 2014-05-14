@@ -61,8 +61,10 @@ static BOOL IsBlock(id object)
 @property NSMutableDictionary *dictionary;
 @property NSMutableDictionary *extensions;
 
+- (id)rootObjectForKeyPath:(id)aKey;
 - (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey;
 - (id)objectForKeyPath:(id)aKey;
+
 
 @end
 
@@ -227,19 +229,24 @@ static BOOL IsBlock(id object)
 #pragma mark -
 #pragma mark Private methods
 
-- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey
+- (id)rootObjectForKeyPath:(id)aKey
 {
     NSString *objectKey = [(NSString *)aKey rootKey];
     
-    id object = self[objectKey];
+    return self[objectKey];
+}
+
+- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey
+{
+    id object = [self rootObjectForKeyPath:aKey];
+    
     [object setValue:anObject forKeyPath:[(NSString *)aKey relativeKeyPath]];
 }
 
 - (id)objectForKeyPath:(id)aKey
 {
-    NSString *objectKey = [(NSString *)aKey rootKey];
+    id object = [self rootObjectForKeyPath:aKey];
     
-    id object = self[objectKey];
     return [object valueForKeyPath:[(NSString *)aKey relativeKeyPath]];
 }
 
