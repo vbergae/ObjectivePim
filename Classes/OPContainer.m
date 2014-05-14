@@ -145,9 +145,14 @@ static BOOL IsBlock(id object)
     }
     
     if (needToExtend) {
-        void(^extension)(id, OPContainer *) = self.extensions[aKey];
-        if (extension) {
-            extension(object, self);
+        id extension = self.extensions[aKey];
+        if (IsBlock(extension)) {
+            void(^extensionBlock)(id, OPContainer *) = extension;
+            extensionBlock(object, self);
+        } else if ([extension isKindOfClass:NSMutableArray.class]) {
+            for (void(^extensionBlock)(id, OPContainer *) in (NSMutableArray *)extension) {
+                extensionBlock(object, self);
+            }
         }
     }
     
@@ -193,7 +198,17 @@ static BOOL IsBlock(id object)
 {
     NSParameterAssert([self.allKeys indexOfObject:key] != NSNotFound);
     
-    self.extensions[key] = block;
+    id currentExtension = self.extensions[key];
+    
+    if (!currentExtension) {
+        self.extensions[key] = block;
+    } else if ([currentExtension isKindOfClass:NSMutableArray.class]) {
+        [(NSMutableArray *)currentExtension addObject:block];
+    } else {
+        NSMutableArray *objectExtensions = [NSMutableArray arrayWithObjects:
+                                            currentExtension, block, nil];
+        self.extensions[key] = objectExtensions;
+    }
 }
 
 - (id)protect:(id (^)(void))code
