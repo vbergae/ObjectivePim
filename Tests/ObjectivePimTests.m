@@ -204,8 +204,7 @@
     [self.pim extend:@"shared_service"
             withCode:^(id service, OPContainer *container)
     {
-        NSString *value = [[NSString alloc] initWithFormat:@"%@", @"value"];
-        [(Foo *)service setBar:value];        [(Foo *)service setBar:@"value"];
+        [(Foo *)service setBar:@"value"];
     }];
     
     Foo *serviceOne = nil;
