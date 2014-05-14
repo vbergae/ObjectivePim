@@ -204,8 +204,7 @@
     [self.pim extend:@"shared_service"
             withCode:^(id service, OPContainer *container)
     {
-        NSString *value = [[NSString alloc] initWithFormat:@"%@", @"value"];
-        [(Foo *)service setBar:value];        [(Foo *)service setBar:@"value"];
+        [(Foo *)service setBar:@"value"];
     }];
     
     Foo *serviceOne = nil;
@@ -231,6 +230,26 @@
     XCTAssertTrue([serviceTwo isKindOfClass:Foo.class]);
     XCTAssertFalse(serviceOne == serviceTwo);
     XCTAssertFalse(serviceOne.bar == serviceTwo.bar);
+}
+
+- (void)testExtendsMoreThanOneTime
+{
+    self.pim[@"shared_service"] = ^(void) {
+        return Foo.new;
+    };
+    [self.pim extend:@"shared_service"
+            withCode:^(id service, OPContainer *container)
+    {
+        [(Foo *)service setBar:@"value"];
+    }];
+    [self.pim extend:@"shared_service"
+            withCode:^(id service, OPContainer *container)
+    {
+        [(Foo *)service setChild:Foo.new];
+    }];
+    
+    XCTAssertNotNil(self.pim[@"shared_service.child"]);
+    XCTAssertEqualObjects(self.pim[@"shared_service.bar"], @"value");
 }
 
 - (void)testResgisterProvider
