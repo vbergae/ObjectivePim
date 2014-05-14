@@ -1,3 +1,6 @@
+0.3.0
+    * Adds support for keypaths on services
+
 0.2.0
     * Deprecates [OPContainer registerProvider:params:]
     * Adds example project

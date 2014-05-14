@@ -7,6 +7,11 @@
 //
 
 #import "OPContainer.h"
+#import "NSString+ObjectivePim.h"
+
+/**
+ @name Helper functions
+ */
 
 static BOOL IsBlock(id object)
 {
@@ -20,6 +25,10 @@ static BOOL IsBlock(id object)
     
     return ([object isKindOfClass:blockClass]) ? YES : NO;
 }
+
+/**
+ @name Factory class
+ */
 
 @interface Factory : NSObject
 
@@ -43,10 +52,19 @@ static BOOL IsBlock(id object)
 
 @end
 
+/**
+ @name OPContainer's implementation
+ */
+
 @interface OPContainer()
 
 @property NSMutableDictionary *dictionary;
 @property NSMutableDictionary *extensions;
+
+- (id)rootObjectForKeyPath:(id)aKey;
+- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey;
+- (id)objectForKeyPath:(id)aKey;
+
 
 @end
 
@@ -104,6 +122,12 @@ static BOOL IsBlock(id object)
 
 - (id)objectForKey:(id)aKey
 {
+    if ([(NSObject *)aKey isKindOfClass:NSString.class]
+        && [(NSString *)aKey isKeyPath])
+    {
+        return [self objectForKeyPath:aKey];
+    }
+    
     id object = self.dictionary[aKey];
     NSParameterAssert(object);
     
@@ -143,7 +167,13 @@ static BOOL IsBlock(id object)
     NSParameterAssert(anObject);
     NSParameterAssert(aKey);
     
-    [self.dictionary setObject:anObject forKey:aKey];
+    if ([(NSObject *)aKey isKindOfClass:NSString.class]
+        && ![(NSString *)aKey isKeyPath])
+    {
+        [self.dictionary setObject:anObject forKey:aKey];
+    } else {
+        [self setObject:anObject forKeyPath:aKey];
+    }
 }
 
 - (void)removeObjectForKey:(id)aKey
@@ -194,6 +224,30 @@ static BOOL IsBlock(id object)
                              params:(NSDictionary *)params
 {
     return [self registerProvider:provider];
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (id)rootObjectForKeyPath:(id)aKey
+{
+    NSString *objectKey = [(NSString *)aKey rootKey];
+    
+    return self[objectKey];
+}
+
+- (void)setObject:(id)anObject forKeyPath:(id<NSCopying>)aKey
+{
+    id object = [self rootObjectForKeyPath:aKey];
+    
+    [object setValue:anObject forKeyPath:[(NSString *)aKey relativeKeyPath]];
+}
+
+- (id)objectForKeyPath:(id)aKey
+{
+    id object = [self rootObjectForKeyPath:aKey];
+    
+    return [object valueForKeyPath:[(NSString *)aKey relativeKeyPath]];
 }
 
 @end
