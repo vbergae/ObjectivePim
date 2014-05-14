@@ -259,24 +259,23 @@ static BOOL IsBlock(id object)
             extensionBlock(object, self);
         }
     }
+    
+    [self.extensions removeObjectForKey:aKey];
 }
 
 - (BOOL)bootService:(id *)object_p withKey:(id)aKey
 {
-    BOOL needToExtend = NO;
     if (IsBlock(*object_p)) {
         id(^block)(void) = *object_p;
         *object_p = block();
         
         [self.dictionary setObject:*object_p forKey:aKey];
-        needToExtend = YES;
     } else if ([*object_p isKindOfClass:Factory.class]) {
         id(^block)(OPContainer *) = [(Factory *)*object_p block];
         *object_p = block(self);
-        needToExtend = YES;
     }
     
-    return needToExtend;
+    return self.extensions[aKey] ? YES : NO;
 }
 
 @end

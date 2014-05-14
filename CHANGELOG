@@ -1,5 +1,6 @@
 0.4.0
     * Adds support for multiple extensions
+    * Fixes extensions after a service has been booted
 
 0.3.0
     * Adds support for keypaths on services

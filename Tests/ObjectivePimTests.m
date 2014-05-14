@@ -252,6 +252,24 @@
     XCTAssertEqualObjects(self.pim[@"shared_service.bar"], @"value");
 }
 
+- (void)testExtendAfterBoot
+{
+    self.pim[@"service"] = ^(void) {
+        return Foo.new;
+    };
+    
+    Foo *service = self.pim[@"service"];
+    XCTAssertNotNil(service);
+    
+    [self.pim extend:@"service" withCode:^(id service, OPContainer *container) {
+        [(Foo *)service setBar:@"value"];
+    }];
+    
+    service = self.pim[@"service"];
+    XCTAssertNotNil(service);
+    XCTAssertEqualObjects(service.bar, @"value");
+}
+
 - (void)testResgisterProvider
 {
     id provider = [OCMockObject niceMockForProtocol:
