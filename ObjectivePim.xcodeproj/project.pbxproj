@@ -133,9 +133,9 @@
 				CC56E37B191C0796003B2FFD /* OPContainer.m */,
 				CC56E37C191C0796003B2FFD /* UIApplication+ObjectivePim.h */,
 				CC56E37D191C0796003B2FFD /* UIApplication+ObjectivePim.m */,
-				CC0FD13619003F64004CD983 /* Supporting Files */,
 				CC772D7A19227498006D0319 /* NSString+ObjectivePim.h */,
 				CC772D7B19227498006D0319 /* NSString+ObjectivePim.m */,
+				CC0FD13619003F64004CD983 /* Supporting Files */,
 			);
 			name = Classes;
 			path = ObjectivePim;

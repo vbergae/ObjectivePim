@@ -10,8 +10,15 @@
 
 @class OPContainer;
 
+/**
+ Category on UIApplication which provides direct access to OPContainer
+ */
 @interface UIApplication (ObjectivePim)
 
+/**
+ Returns a initialized insantance of OPContainer. Always returns the
+ same instance.
+ */
 @property (readonly) OPContainer *container;
 
 @end
