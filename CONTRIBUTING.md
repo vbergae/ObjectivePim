@@ -1,4 +1,5 @@
 # Contributing
+
   1. Fork the repository.
   2. Create a topic branch.
   3. Setup your environment running `script/bootstrap`
