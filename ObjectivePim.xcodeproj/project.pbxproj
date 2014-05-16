@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0FD13519003F64004CD983 /* Classes */,
-				CC0FD14919003F64004CD983 /* ObjectivePimTests */,
+				CC0FD14919003F64004CD983 /* Tests */,
 				CC0FD13219003F63004CD983 /* Frameworks */,
 				CC0FD13119003F63004CD983 /* Products */,
 				8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */,
@@ -154,13 +154,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CC0FD14919003F64004CD983 /* ObjectivePimTests */ = {
+		CC0FD14919003F64004CD983 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */,
 				CC0FD14A19003F64004CD983 /* Supporting Files */,
+				CC56E384191C0A6D003B2FFD /* ObjectivePimTests.m */,
 				CC772D7D192274C6006D0319 /* NSString+ObjectivePimTests.m */,
 			);
+			name = Tests;
 			path = ObjectivePimTests;
 			sourceTree = "<group>";
 		};
