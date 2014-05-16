@@ -212,7 +212,6 @@ static BOOL IsBlock(id object)
         [provider registerProvider:self];        
     }
     
-    
     self[provider.identifier] = provider;
     
     return self;
@@ -220,8 +219,16 @@ static BOOL IsBlock(id object)
 
 - (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
                              params:(NSDictionary *)params
-{
-    return [self registerProvider:provider];
+{    
+    [self registerProvider:provider];
+    NSString *serviceKey = provider.identifier;
+    
+    for (NSString *key in params) {
+        NSString *keypath = [serviceKey stringByAppendingFormat:@".%@", key];
+        [self setObject:params[key] forKeyPath:keypath];
+    }
+    
+    return self;
 }
 
 #pragma mark -

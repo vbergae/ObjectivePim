@@ -19,9 +19,20 @@
 
 @end
 
-
 @implementation Foo
 
+@end
+
+@interface FooProvider : Foo<OPServiceProviderProtocol>
+
+@end
+
+@implementation FooProvider
+
+- (NSString *)identifier
+{
+    return @"provider";
+}
 
 @end
 
@@ -283,6 +294,16 @@
     
     XCTAssertNoThrow([provider verify]);
     XCTAssertTrue(self.pim[@"provider"] == provider);
+}
+
+- (void)testRegisterProviderWithParams
+{
+    FooProvider *provider = FooProvider.new;
+    [self.pim registerProvider:provider params:@{@"child": Foo.new,
+                                                 @"child.bar" : @"value"}];
+    
+    XCTAssertTrue(self.pim[@"provider"] == provider);
+    XCTAssertEqualObjects(self.pim[@"provider.child.bar"], @"value");
 }
 
 @end

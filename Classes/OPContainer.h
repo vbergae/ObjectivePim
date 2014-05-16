@@ -132,12 +132,9 @@
  * @param provider A ServiceProviderInterface instance
  * @param params An array of values that customizes the provider
  *
- * @warning This method has been deprecated since 0.2.0 and will be
- * removed on 1.0.0
- *
  * @return self
  */
 - (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
-                             params:(NSDictionary *)params __deprecated;
+                             params:(NSDictionary *)params;
 
 @end
