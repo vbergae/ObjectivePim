@@ -44,7 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectivePimTests.xcconfig"; path = "Pods/Pods-ObjectivePimTests.xcconfig"; sourceTree = "<group>"; };
+		7EA3574C666B7284BD7ACC6C /* Pods-ObjectivePimTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectivePimTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectivePimTests/Pods-ObjectivePimTests.release.xcconfig"; sourceTree = "<group>"; };
+		A794F92C68D3BC26166A5A15 /* Pods-ObjectivePimTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectivePimTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectivePimTests/Pods-ObjectivePimTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3C1DA5A4A234B46BE43730B /* libPods-ObjectivePimTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectivePimTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13019003F63004CD983 /* libObjectivePim.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectivePim.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FD13319003F63004CD983 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B74A83DF9EEF5D9EFC059B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A794F92C68D3BC26166A5A15 /* Pods-ObjectivePimTests.debug.xcconfig */,
+				7EA3574C666B7284BD7ACC6C /* Pods-ObjectivePimTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC0FD12719003F63004CD983 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +111,7 @@
 				CC0FD14919003F64004CD983 /* Tests */,
 				CC0FD13219003F63004CD983 /* Frameworks */,
 				CC0FD13119003F63004CD983 /* Products */,
-				8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */,
+				7B74A83DF9EEF5D9EFC059B2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ObjectivePimTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjectivePimTests/Pods-ObjectivePimTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -358,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -389,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -423,7 +433,7 @@
 		};
 		CC0FD15719003F64004CD983 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */;
+			baseConfigurationReference = A794F92C68D3BC26166A5A15 /* Pods-ObjectivePimTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -444,7 +454,7 @@
 		};
 		CC0FD15819003F64004CD983 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B66E46C2A41493297D8C0B4 /* Pods-ObjectivePimTests.xcconfig */;
+			baseConfigurationReference = 7EA3574C666B7284BD7ACC6C /* Pods-ObjectivePimTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

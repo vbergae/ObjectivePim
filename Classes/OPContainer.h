@@ -8,14 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef OP_INSTANCETYPE
-#if __has_feature(objc_instancetype)
-    #define OP_INSTANCETYPE instancetype
-#else
-    #define OP_INSTANCETYPE id
-#endif
-#endif
-
 @class OPContainer;
 
 /**
@@ -27,7 +19,7 @@
 /**
  Returns an unique identifier used by OPContainer as service's key
  */
-@property (readonly) NSString *identifier;
+@property (readonly) NSString * _Nonnull identifier;
 
 @optional
 
@@ -39,7 +31,7 @@
  *
  * @param contaienr An Container instance
  */
-- (void)registerProvider:(OPContainer *)container;
+- (void)registerProvider:(OPContainer * _Nonnull)container;
 
 @end
 
@@ -73,7 +65,7 @@
  *
  * @param params The parameters or objects dictionary.
  */
-- (OP_INSTANCETYPE)initWithParams:(NSDictionary *)params;
+- (instancetype _Nonnull)initWithParams:(NSDictionary * _Nullable)params;
 
 /**
  @name Service Container
@@ -86,7 +78,7 @@
  *
  @return The passed block result
  */
-- (id)factory:(id(^)(OPContainer *container))block;
+- (id _Nonnull)factory:(nonnull id _Nonnull (^)(OPContainer * _Nonnull container))block;
 
 /**
  * Protects a callable from being interpreted as a service.
@@ -97,7 +89,7 @@
  *
  * @return The passed block result
  */
-- (id)protect:(id(^)(void))code;
+- (id _Nonnull)protect:(nonnull id _Nonnull(^)(void))code;
 
 /**
  * Extends an object definition.
@@ -110,8 +102,8 @@
  *
  * @return callable The wrapped callable
  */
-- (void)extend:(NSString *)key
-      withCode:(void(^)(id service, OPContainer *container))block;
+- (void)extend:(NSString * _Nonnull)key
+      withCode:(nonnull void(^)(id _Nonnull service, OPContainer * _Nonnull container))block;
 
 /**
  @name Register service providers
@@ -124,7 +116,7 @@
  *
  * @return self
  */
-- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider;
+- (instancetype _Nonnull)registerProvider:(id<OPServiceProviderProtocol> _Nonnull)provider;
 
 /**
  * Registers a service provider.
@@ -134,7 +126,7 @@
  *
  * @return self
  */
-- (OP_INSTANCETYPE)registerProvider:(id<OPServiceProviderProtocol>)provider
-                             params:(NSDictionary *)params;
+- (instancetype _Nonnull)registerProvider:(id<OPServiceProviderProtocol> _Nonnull)provider
+                             params:(NSDictionary * _Nonnull)params;
 
 @end
